@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{Title}{block:PostSummary} — {PostSummary}{/block:PostSummary}</title>
+    <link href='{Favicon}' rel='shortcut icon'>
+    <link href='{RSS}' rel='alternate' type='application/rss+xml'>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <link href='https://s3-us-west-2.amazonaws.com/uxtronaut/css/uxtronaut.css' rel='stylesheet'>
+    <script src='https://s3-us-west-2.amazonaws.com/uxtronaut/js/custom.modernizr.min.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <header>
+      <div class='row'>
+        <div class='small-12 column'>
+          <img class='floating' id='uxtronaut' src='https://s3-us-west-2.amazonaws.com/uxtronaut/images/uxtronaut.png'>
+        </div>
+        <div class='small-12 large-5 column'>
+          <h1>
+            <a href='/'>
+              <span class='ux'>ux</span>
+              <span>tronaut</span>
+            </a>
+          </h1>
+        </div>
+        <div class='small-12 large-7 column'>
+          <ul id='contact'>
+            <li>
+              <a href='http://twitter.com/uxtronaut'>
+                <i class='icon-twitter icon-1'></i>
+              </a>
+            </li>
+            <li>
+              <a href='http://github.com/uxtronaut'>
+                <i class='icon-github icon-2'></i>
+              </a>
+            </li>
+            <li>
+              <a href='mailto:uxtronaut@gmail.com'>
+                <i class='icon-mail icon-3'></i>
+              </a>
+            </li>
+            <li>
+              <a href='{RSS}'>
+                <i class='icon-feed icon-4'></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class='row'>
+        <div class='small-12 column'>
+          <ol id='posts'>
+            {block:Posts}
+            <article class='post {TagsAsClasses}'>
+              {block:Text}
+              <div class='text'>
+                {block:Title}
+                <h3>{Title}</h3>
+                {/block:Title}
+                {Body}
+              </div>
+              {/block:Text}
+              {block:Quote}
+              <div class='quote'>
+                <blockquote class='words {Length}'>“{Quote}”</blockquote>
+                {block:Source}
+                <p class='source'>{Source}</p>
+                {/block:Source}
+              </div>
+              {/block:Quote}
+              {block:Link}
+              <div class='link'>
+                <h3>
+                  <a href='{URL}'>
+                    {Target}{Name}
+                  </a>
+                </h3>
+              </div>
+              {block:Description}
+              <div class='caption'>{Description}</div>
+              {/block:Description}
+              {/block:Link}
+              {block:Video}
+              <div class='video'>
+                <div class='flex-video'>
+                  {Video-500}
+                </div>
+                {block:Caption}
+                <div class='caption'>{Caption}</div>
+                {/block:Caption}
+              </div>
+              {/block:Video}
+              {block:Audio}
+              <div class='audio'>
+                {block:AlbumArt}
+                <img alt='{Caption}' src='{AlbumArtURL}'>
+                {/block:AlbumArt}
+                {AudioPlayerBlack}
+                {block:Caption}
+                <div class='caption'>{Caption}</div>
+                {/block:Caption}
+              </div>
+              {/block:Audio}
+              {block:Photo}
+              <div class='photo'>
+                {LinkOpenTag}
+                <img alt='{PhotoAlt}' src='{PhotoURL-HighRes}'>
+                {LinkCloseTag}
+                {block:Caption}
+                <div class='caption'>{Caption}</div>
+                {/block:Caption}
+              </div>
+              {/block:Photo}
+              {block:Photoset}
+              <div class='photoset'>
+                {block:Photos}
+                <img alt='{PhotoAlt}' src='{PhotoURL-HighRes}'>
+                {block:Caption}
+                <div class='caption'>{Caption}</div>
+                {/block:Caption}
+                {/block:Photos}
+                {block:Caption}
+                <div class='caption'>{Caption}</div>
+                {/block:Caption}
+              </div>
+              {/block:Photoset}
+              {block:Panorama}
+              <div class='panorama'>
+                {LinkOpenTag}
+                <img alt='{PhotoAlt}' src='{PhotoURL-Panorama}'>
+                {LinkCloseTag}
+                {block:Caption}
+                <div class='caption'>{Caption}</div>
+                {/block:Caption}
+              </div>
+              {/block:Panorama}
+              {block:Chat}
+              <div class='chat'>
+                {block:Title}
+                <h3>{Title}</h3>
+                {/block:Title}
+                <ul class='conversation'>
+                  {block:Lines}
+                  <li class='line {Alt}'>
+                    {block:Label}
+                    <span class='person'>{Label}</span>
+                    {/block:Label}
+                    <span class='person-said'>{Line}</span>
+                  </li>
+                  {/block:Lines}
+                </ul>
+              </div>
+              {/block:Chat}
+              {block:Answer}
+              <div class='answer'>
+                <img src='{AskerPortraitURL-40}'>
+                {Asker}
+                {Question}
+                {Answer}
+              </div>
+              {/block:Answer}
+              {block:IndexPage}
+              <p class='info'>
+                <a class='permalink' href='{Permalink}'>{lang:Permalink}</a>
+              </p>
+              {/block:IndexPage}
+              {block:Date}
+              {block:NewDayDate}
+              <p class='date'>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>
+              {/block:NewDayDate}
+              {block:SameDayDate}
+              <p class='date'>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>
+              {/block:SameDayDate}
+              {/block:Date}
+            </article>
+            {/block:Posts}
+          </ol>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

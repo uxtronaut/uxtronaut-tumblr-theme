@@ -1,0 +1,170 @@
+!!! 5
+%html
+  %head
+
+    %title {Title}{block:PostSummary} — {PostSummary}{/block:PostSummary}
+    %link{ :rel => "shortcut icon", :href => "{Favicon}" }
+    %link{ :rel => "alternate", :type => "application/rss+xml", :href => "{RSS}" }
+
+    \{block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    \{/block:Description}
+
+    %meta{:name => 'apple-mobile-web-app-capable', :content => 'yes'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+
+    %link{:rel => 'stylesheet', :href => 'https://s3-us-west-2.amazonaws.com/uxtronaut/css/uxtronaut.css'}
+    %script{:type => 'text/javascript', :src => 'https://s3-us-west-2.amazonaws.com/uxtronaut/js/custom.modernizr.min.js'}
+
+  %body
+    %header
+      .row
+        .small-12.column
+          %img#uxtronaut.floating{:src => 'https://s3-us-west-2.amazonaws.com/uxtronaut/images/uxtronaut.png'}
+
+        .small-12.large-5.column
+          %h1
+            %a{:href => '/'}
+              %span.ux ux
+              %span tronaut
+
+        .small-12.large-7.column
+          %ul#contact
+            %li
+              %a{:href => 'http://twitter.com/uxtronaut'}
+                %i.icon-twitter.icon-1
+
+            %li
+              %a{:href => 'http://github.com/uxtronaut'}
+                %i.icon-github.icon-2
+
+            %li
+              %a{:href => 'mailto:uxtronaut@gmail.com'}
+                %i.icon-mail.icon-3
+
+            %li
+              %a{:href => '{RSS}'}
+                %i.icon-feed.icon-4
+
+    %section
+      .row
+        .small-12.column
+          %ol#posts
+            {block:Posts}
+            %article.post{:class => '{TagsAsClasses}'}
+              {block:Text}
+              .text
+                {block:Title}
+                %h3 {Title}
+                {/block:Title}
+                {Body}
+              {/block:Text}
+
+              {block:Quote}
+              .quote
+                %blockquote.words{class: "{Length}"} “{Quote}”
+                {block:Source}
+                %p.source {Source}
+                {/block:Source}
+              {/block:Quote}
+
+              {block:Link}
+              .link
+                %h3
+                  %a{:href => '{URL}'}
+                    {Target}{Name}
+              {block:Description}
+              .caption {Description}
+              {/block:Description}
+              {/block:Link}
+
+              {block:Video}
+              .video
+                .flex-video
+                  {Video-500}
+                {block:Caption}
+                .caption {Caption}
+                {/block:Caption}
+              {/block:Video}
+
+              {block:Audio}
+              .audio
+                {block:AlbumArt}
+                %img{:alt => '{Caption}', :src => '{AlbumArtURL}'}
+                {/block:AlbumArt}
+                {AudioPlayerBlack}
+                {block:Caption}
+                .caption {Caption}
+                {/block:Caption}
+              {/block:Audio}
+
+              {block:Photo}
+              .photo
+                {LinkOpenTag}
+                %img{:alt => '{PhotoAlt}', :src => '{PhotoURL-HighRes}'}/
+                {LinkCloseTag}
+                {block:Caption}
+                .caption {Caption}
+                {/block:Caption}
+              {/block:Photo}
+
+              {block:Photoset}
+              .photoset
+                {block:Photos}
+                %img{alt: "{PhotoAlt}", src: "{PhotoURL-HighRes}"}/
+                {block:Caption}
+                .caption {Caption}
+                {/block:Caption}
+                {/block:Photos}
+                {block:Caption}
+                .caption {Caption}
+                {/block:Caption}
+              {/block:Photoset}
+              
+              {block:Panorama}
+              .panorama
+                {LinkOpenTag}
+                %img{alt: "{PhotoAlt}", src: "{PhotoURL-Panorama}"}/
+                {LinkCloseTag}
+                {block:Caption}
+                .caption {Caption}
+                {/block:Caption}
+              {/block:Panorama}
+              
+              {block:Chat}
+              .chat
+                {block:Title}
+                %h3 {Title}
+                {/block:Title}
+                %ul.conversation
+                  {block:Lines}
+                  %li.line{class: "{Alt}"}
+                    {block:Label}
+                    %span.person {Label}
+                    {/block:Label}
+                    %span.person-said {Line}
+                  {/block:Lines}
+              {/block:Chat}
+
+              {block:Answer}
+              .answer
+                %img{src: "{AskerPortraitURL-40}"}
+                {Asker}
+                {Question}
+                {Answer}
+              {/block:Answer}
+
+              {block:IndexPage}
+              %p.info
+                %a.permalink{href: "{Permalink}"} {lang:Permalink}
+              {/block:IndexPage}
+
+              {block:Date}
+              {block:NewDayDate}
+              %p.date {DayOfWeek}, {Month} {DayOfMonth}, {Year}
+              {/block:NewDayDate}
+              {block:SameDayDate}
+              %p.date {DayOfWeek}, {Month} {DayOfMonth}, {Year}
+              {/block:SameDayDate}
+              {/block:Date}
+            {/block:Posts}

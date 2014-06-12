@@ -1,0 +1,106 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300|Ruda:400,900|Merriweather:400,700,700italic,400italic)
+@import 'icons'
+@import 'foundation/normalize'
+@import 'variables'
+@import 'foundation/foundation'
+
+@import 'css3-mixins'
+@import 'floating'
+
+@media #{$small-only}
+  h1,h2,h3,h4,h5,h6
+    line-height: $header-line-height
+
+  h1
+    font-size: $h1-font-size
+  h2
+    font-size: $h2-font-size
+  h3
+    font-size: $h3-font-size
+  h4
+    font-size: $h4-font-size
+
+header
+  background-image: url('https://s3-us-west-2.amazonaws.com/uxtronaut/images/header-bg.png')
+  background-repeat: no-repeat
+  background-position: center bottom
+  background-size: 100% $header-height
+  height: $header-height
+
+  #uxtronaut
+    position: absolute
+    width: 10rem
+    left: 50%
+    z-index: 0
+
+    @media #{$large-up}
+      left: auto
+      right: 1rem
+      margin-top: 0
+
+  h1
+    a
+      font-size: 0
+      white-space: nowrap
+
+    .ux
+      font-weight: 900
+
+    span
+      display: inline-block
+      position: relative
+      z-index: 1
+      font-family: 'Ruda', 'sans-serif'
+      font-size: $h1-font-size
+      color: $body-bg
+      font-weight: normal
+      margin-top: 3rem
+
+      @media #{$large-up}
+        position: relative
+        font-size: 3.5rem
+        margin-top: 4rem
+
+  #contact
+    list-style-type: none
+    margin: 0
+
+    @media #{$large-up}
+      margin-top: 5.75rem
+      margin-left: 1rem
+
+    li
+      margin-bottom: .75rem
+      display: inline-block
+
+    a
+      color: darken($body-bg, 10%)
+
+    a:hover
+      color: $body-bg
+
+    i
+      position: relative
+      display: inline-block
+      font-size: 2.175rem
+      vertical-align: middle
+      margin-right: .25rem
+
+      @media #{$large-up}
+        font-size: 2rem
+
+article
+  margin-top: 1rem
+  margin-bottom: 1rem
+
+#posts
+  list-style-type: none
+  margin: 0
+
+iframe#tumblr_controls
+  display: none !important
+
+.permalink, p.date, p.info
+  font-size: rem-calc(12)
+  display: inline
+

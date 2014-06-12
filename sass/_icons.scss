@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'custom-font';
+  src:url('https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.eot?-lqjt70');
+  src:url('https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.eot?#iefix-lqjt70') format('embedded-opentype'),
+    url('https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.woff?-lqjt70') format('woff'),
+    url('https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.ttf?-lqjt70') format('truetype'),
+    url('https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.svg?-lqjt70#custom-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'custom-font';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mail:before {
+  content: "\e600";
+}
+.icon-twitter:before {
+  content: "\e601";
+}
+.icon-feed:before {
+  content: "\e602";
+}
+.icon-github:before {
+  content: "\e603";
+}
