@@ -8636,3 +8636,14 @@ iframe#tumblr_controls {
   font-size: 0.6rem;
   display: inline;
 }
+
+.gist {
+  display: inline-block;
+  clear: both;
+}
+.gist .gist-file {
+  border: 0;
+}
+.gist .gist-file .gist-data {
+  background-color: transparent;
+}
