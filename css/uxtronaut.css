@@ -1,12 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300|Ruda:400,900|Merriweather:400,700,700italic,400italic);
 @font-face {
   font-family: 'custom-font';
-  src: url("https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.eot?-lqjt70");
-  src: url("https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.eot?#iefix-lqjt70") format("embedded-opentype"), url("https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.woff?-lqjt70") format("woff"), url("https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.ttf?-lqjt70") format("truetype"), url("https://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.svg?-lqjt70#custom-font") format("svg");
+  src: url("http://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.eot?-lqjt70");
+  src: url("http://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.eot?#iefix-lqjt70") format("embedded-opentype"), url("http://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.woff?-lqjt70") format("woff"), url("http://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.ttf?-lqjt70") format("truetype"), url("http://s3-us-west-2.amazonaws.com/uxtronaut/fonts/custom-font.svg?-lqjt70#custom-font") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'custom-font';
   speak: none;
@@ -4292,7 +4291,6 @@ select::-ms-expand {
     background: #f3f3f3;
   }
 }
-
 /* Attach elements to the beginning or end of an input */
 .prefix,
 .postfix {
@@ -4923,7 +4921,6 @@ kbd {
     -webkit-transform: rotate(360deg);
   }
 }
-
 @-moz-keyframes rotate {
   from {
     -moz-transform: rotate(0deg);
@@ -4933,7 +4930,6 @@ kbd {
     -moz-transform: rotate(360deg);
   }
 }
-
 @-o-keyframes rotate {
   from {
     -o-transform: rotate(0deg);
@@ -4943,7 +4939,6 @@ kbd {
     -o-transform: rotate(360deg);
   }
 }
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -4953,7 +4948,6 @@ kbd {
     transform: rotate(360deg);
   }
 }
-
 /* Orbit Graceful Loading */
 .slideshow-wrapper {
   position: relative;
@@ -5138,7 +5132,7 @@ kbd {
   left: 10px;
   font-size: 12px;
   color: white;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
   z-index: 10;
 }
 .orbit-container .orbit-slide-number span {
@@ -5672,13 +5666,6 @@ dialog[open] {
   dialog, .reveal-modal {
     padding: 1.5rem;
   }
-  dialog.full, .reveal-modal.full {
-    top: 0;
-    left: 0;
-    height: 100vh;
-    min-height: 100vh;
-    margin-left: 0 !important;
-  }
 }
 @media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
   dialog, .reveal-modal {
@@ -5716,6 +5703,15 @@ dialog[open] {
   }
 }
 
+@media only screen and (min-width: 40.063em) {
+  dialog.full, .reveal-modal.full {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    min-height: 100vh;
+    margin-left: 0 !important;
+  }
+}
 @media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
   dialog.full, .reveal-modal.full {
     margin-left: -50vw;
@@ -6119,7 +6115,6 @@ div.switch.round label {
     position: relative;
   }
 }
-
 table {
   background: white;
   margin-bottom: 1rem;
@@ -7589,8 +7584,7 @@ blockquote p {
 
   @page {
     margin: 0.5cm;
-}
-
+  }
   p,
   h2,
   h3 {
@@ -8010,7 +8004,7 @@ ul.off-canvas-list li a:hover {
   left: 0;
   right: 0;
   z-index: 1002;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 @media only screen and (min-width: 40.063em) {
   .move-right .exit-off-canvas:hover {
@@ -8038,7 +8032,7 @@ ul.off-canvas-list li a:hover {
   left: 0;
   right: 0;
   z-index: 1002;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 @media only screen and (min-width: 40.063em) {
   .move-left .exit-off-canvas:hover {
@@ -8455,7 +8449,6 @@ th.hide-for-touch {
     transform: translate(0, 0) rotate(-50deg) scale(0.95);
   }
 }
-
 @-moz-keyframes floating {
   from {
     -webkit-transform: translate(0, 0) rotate(-50deg) scale(0.95);
@@ -8487,7 +8480,6 @@ th.hide-for-touch {
     transform: translate(0, 0) rotate(-50deg) scale(0.95);
   }
 }
-
 @keyframes floating {
   from {
     -webkit-transform: translate(0, 0) rotate(-50deg) scale(0.95);
@@ -8519,7 +8511,6 @@ th.hide-for-touch {
     transform: translate(0, 0) rotate(-50deg) scale(0.95);
   }
 }
-
 @media only screen and (max-width: 40em) {
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
@@ -8542,7 +8533,7 @@ th.hide-for-touch {
   }
 }
 header {
-  background-image: url("https://s3-us-west-2.amazonaws.com/uxtronaut/images/header-bg.png");
+  background-image: url("http://s3-us-west-2.amazonaws.com/uxtronaut/images/header-bg.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% 15rem;
